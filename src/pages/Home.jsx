@@ -70,7 +70,6 @@ export default function Home() {
     <div className="home-layout">
       <section className="hero-section">
         <div className="hero-left">
-          <p className="eyebrow">React Router Midterm Project</p>
 
           <h1>
             Professional React Router Navigation Experience.

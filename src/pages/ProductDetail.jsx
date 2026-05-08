@@ -43,7 +43,6 @@ export default function ProductDetail() {
       <div className="content-stack">
         <div className="section-header">
           <div>
-            <p className="eyebrow">Route params</p>
             <h2>{product.name}</h2>
           </div>
           <span className="pill">/products/{id}</span>

@@ -41,7 +41,6 @@ function sortProducts(list, sortKey) {
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const category = searchParams.get('category') || 'all';
   const sort = searchParams.get('sort') || 'featured';
   const searchQuery = searchParams.toString();
@@ -68,73 +67,51 @@ export default function Products() {
   };
 
   return (
-    <div className="products-layout">
-      <section className="products-hero">
-        <div className="products-hero-content">
+    <section className="content-stack">
+        <div className="section-header">
           <div>
-            <p className="eyebrow">React Router Query String</p>
-
-            <h1>Products Navigation Demo</h1>
-
-            <p className="products-description">
-              Demonstration of filtering, sorting, query strings,
-              dynamic route params, and SPA navigation.
-            </p>
-          </div>
-
-          <div className="products-summary">
-            <div className="summary-box">
-              <h3>{filteredProducts.length}</h3>
-              <p>Products Found</p>
-            </div>
-
-            <div className="summary-box">
-              <h3>{category}</h3>
-              <p>Category</p>
-            </div>
-
-            <div className="summary-box">
-              <h3>{sort}</h3>
-              <p>Sort Method</p>
-            </div>
+            <h2>Products</h2>
           </div>
         </div>
-      </section>
 
-      <section className="content-stack">
-        <div className="toolbar modern-toolbar">
-          <div className="toolbar-group">
-            <label className="field">
-              <span>Category</span>
+        <div className="toolbar">
+          <label className="field">
+            <span>Category</span>
+            <select
+              value={category}
+              onChange={(event) => updateSearchParams('category', event.target.value)}
+            >
+              {categoryOptions.map((option) => (
+                <option key={option} value={option}>
+                  {formatOptionLabel(option)}
+                </option>
+              ))}
+            </select>
+          </label>
 
-              <select
-                value={category}
-                onChange={(event) =>
-                  updateSearchParams('category', event.target.value)
-                }
-              >
-                {categoryOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <label className="field">
+            <span>Sort</span>
+            <select
+              value={sort}
+              onChange={(event) => updateSearchParams('sort', event.target.value)}
+            >
+              {sortOptions.map((option) => (
+                <option key={option} value={option}>
+                  {formatOptionLabel(option)}
+                </option>
+              ))}
+            </select>
+          </label>
 
-            <label className="field">
-              <span>Sort</span>
-
-      {filteredProducts.length > 0 ? (
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} queryString={searchQuery} />
-          ))}
+          <Link className="button button-secondary" to="/products">
+            Reset filters
+          </Link>
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="product-grid modern-product-grid">
+          <div className="product-grid">
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} queryString={searchQuery} />
             ))}
           </div>
         ) : (
@@ -143,7 +120,6 @@ export default function Products() {
             description="Adjust category or sorting filters to display matching products."
           />
         )}
-      </section>
-    </div>
+    </section>
   );
 }
