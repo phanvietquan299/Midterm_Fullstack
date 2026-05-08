@@ -4,6 +4,21 @@ import EmptyState from '../components/EmptyState';
 import ProductCard from '../components/ProductCard';
 import { categoryOptions, products, sortOptions } from '../data/products';
 
+function formatOptionLabel(option) {
+  if (option === 'all') {
+    return 'All products';
+  }
+
+  if (option === 'featured') {
+    return 'Featured';
+  }
+
+  return option
+    .split('_')
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
 function sortProducts(list, sortKey) {
   const sorted = [...list];
 
@@ -26,6 +41,7 @@ export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
   const category = searchParams.get('category') || 'all';
   const sort = searchParams.get('sort') || 'featured';
+  const searchQuery = searchParams.toString();
 
   const filteredProducts = useMemo(() => {
     const categoryFiltered =
@@ -52,10 +68,8 @@ export default function Products() {
     <section className="content-stack">
       <div className="section-header">
         <div>
-          <p className="eyebrow">Member 2 starter</p>
           <h2>Products</h2>
         </div>
-        <p className="muted">Use the filters to demonstrate query-string state.</p>
       </div>
 
       <div className="toolbar">
@@ -64,7 +78,7 @@ export default function Products() {
           <select value={category} onChange={(event) => updateSearchParams('category', event.target.value)}>
             {categoryOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {formatOptionLabel(option)}
               </option>
             ))}
           </select>
@@ -75,7 +89,7 @@ export default function Products() {
           <select value={sort} onChange={(event) => updateSearchParams('sort', event.target.value)}>
             {sortOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {formatOptionLabel(option)}
               </option>
             ))}
           </select>
@@ -89,7 +103,7 @@ export default function Products() {
       {filteredProducts.length > 0 ? (
         <div className="product-grid">
           {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} queryString={searchQuery} />
           ))}
         </div>
       ) : (
