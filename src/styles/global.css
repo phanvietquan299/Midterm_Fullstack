@@ -342,6 +342,26 @@ select {
   min-height: 100%;
 }
 
+.query-state {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(47, 111, 237, 0.08), rgba(47, 111, 237, 0.04));
+  border: 1px solid rgba(47, 111, 237, 0.14);
+}
+
+.query-state h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.query-state-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .admin-layout {
   grid-template-columns: 280px minmax(0, 1fr);
   padding: 24px;

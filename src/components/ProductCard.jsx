@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, queryString }) {
+  const detailTo = queryString
+    ? { pathname: `/products/${product.id}`, search: `?${queryString}` }
+    : `/products/${product.id}`;
+
   return (
     <article className="product-card">
       <div className={`product-visual tone-${product.tone}`}>
@@ -16,7 +20,7 @@ export default function ProductCard({ product }) {
         <h3>{product.name}</h3>
         <p>{product.summary}</p>
 
-        <Link className="card-link" to={`/products/${product.id}`}>
+        <Link className="card-link" to={detailTo}>
           View details
         </Link>
       </div>
