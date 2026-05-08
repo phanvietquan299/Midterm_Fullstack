@@ -420,3 +420,384 @@ select {
     align-items: flex-start;
   }
 }
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.home-layout {
+  display: grid;
+  gap: 22px;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 22px;
+}
+
+.hero-left,
+.hero-right,
+.features-section,
+.flows-section,
+.routes-section,
+.notfound-card,
+.admin-products-panel,
+.admin-hero,
+.admin-info-card,
+.admin-product-card,
+.flow-card,
+.route-card,
+.feature-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(23, 32, 51, 0.12);
+  box-shadow: 0 18px 40px rgba(48, 65, 104, 0.08);
+}
+
+.hero-left,
+.hero-right,
+.features-section,
+.flows-section,
+.routes-section,
+.admin-products-panel,
+.admin-hero,
+.notfound-card {
+  padding: 28px;
+  border-radius: 28px;
+}
+
+.hero-left h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.96;
+}
+
+.hero-description,
+.section-heading p,
+.route-card p,
+.feature-card p,
+.flow-card p,
+.admin-hero p,
+.admin-info-card p,
+.admin-product-card p,
+.notfound-card p,
+.query-summary p {
+  color: var(--text-soft);
+}
+
+.section-header-stack {
+  align-items: end;
+}
+
+.section-notes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.section-heading,
+.admin-page-header,
+.admin-hero,
+.query-summary,
+.admin-products-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stats-row,
+.features-grid,
+.routes-grid,
+.flow-grid,
+.admin-card-grid,
+.admin-products-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.stats-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.stat-box,
+.feature-card,
+.route-card,
+.flow-card,
+.admin-info-card,
+.admin-product-card {
+  padding: 20px;
+  border-radius: 22px;
+}
+
+.feature-card,
+.route-card,
+.flow-card,
+.admin-info-card,
+.admin-product-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(29, 44, 80, 0.08);
+}
+
+.preview-window {
+  display: grid;
+  gap: 14px;
+}
+
+.preview-header {
+  display: flex;
+  gap: 8px;
+}
+
+.preview-header span {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(23, 32, 51, 0.14);
+}
+
+.preview-body {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.preview-sidebar {
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar-item,
+.route-badge,
+.notfound-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(47, 111, 237, 0.08);
+  color: #2454af;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.sidebar-item.active {
+  background: linear-gradient(135deg, rgba(47, 111, 237, 0.18), rgba(242, 140, 72, 0.18));
+  color: #112046;
+}
+
+.preview-content {
+  display: grid;
+  gap: 12px;
+}
+
+.preview-card {
+  min-height: 92px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(47, 111, 237, 0.14), rgba(242, 140, 72, 0.16));
+}
+
+.preview-card.large {
+  min-height: 180px;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.feature-icon,
+.admin-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, rgba(47, 111, 237, 0.18), rgba(242, 140, 72, 0.18));
+}
+
+.query-summary {
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: rgba(47, 111, 237, 0.08);
+  border: 1px solid rgba(47, 111, 237, 0.12);
+}
+
+.query-summary p {
+  margin: 0;
+  word-break: break-word;
+}
+
+.detail-card {
+  overflow: hidden;
+}
+
+.detail-visual {
+  display: grid;
+  place-items: center;
+}
+
+.detail-visual span,
+.product-visual span {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+}
+
+.query-state {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(47, 111, 237, 0.06);
+  border: 1px solid rgba(47, 111, 237, 0.1);
+}
+
+.query-state-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-page {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-hero {
+  background: linear-gradient(135deg, rgba(47, 111, 237, 0.08), rgba(242, 140, 72, 0.12));
+  border: 1px solid rgba(47, 111, 237, 0.1);
+}
+
+.admin-page-header {
+  align-items: end;
+}
+
+.admin-card-grid,
+.admin-products-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-products-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-product-card {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 14px;
+}
+
+.admin-product-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.notfound-page {
+  min-height: 65vh;
+  place-items: center;
+}
+
+.notfound-card {
+  justify-items: start;
+  max-width: 560px;
+}
+
+.notfound-code {
+  background: linear-gradient(135deg, rgba(47, 111, 237, 0.16), rgba(242, 140, 72, 0.2));
+}
+
+.tone-sunset,
+.tone-ocean,
+.tone-mint,
+.tone-violet {
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  .hero-section,
+  .detail-card,
+  .admin-layout,
+  .product-grid,
+  .features-grid,
+  .routes-grid,
+  .flow-grid,
+  .admin-card-grid,
+  .admin-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-left,
+  .hero-right,
+  .features-section,
+  .flows-section,
+  .routes-section,
+  .admin-sidebar,
+  .admin-content {
+    padding: 18px;
+  }
+
+  .preview-body {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-product-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100%, calc(100% - 20px));
+    padding-top: 10px;
+  }
+
+  .page-frame {
+    margin-top: 12px;
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .hero-left,
+  .hero-right,
+  .features-section,
+  .flows-section,
+  .routes-section,
+  .empty-state,
+  .content-stack,
+  .admin-sidebar,
+  .admin-content,
+  .admin-products-panel,
+  .admin-hero,
+  .notfound-card {
+    padding: 18px;
+  }
+
+  .section-header,
+  .section-header h2 {
+    align-items: flex-start;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-left h1 {
+    max-width: none;
+  }
+}

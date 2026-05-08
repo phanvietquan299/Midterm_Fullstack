@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
 const qaChecks = [
-  'Open /admin and confirm the dashboard renders inside AdminLayout.',
-  'Open /admin/users and confirm the sidebar stays visible.',
-  'Open /admin/settings directly after refresh and confirm the route still works.',
-  'Use the browser back button and confirm history navigation behaves correctly.',
-  'Check that active admin links update when routes change.'
+  'Mở /admin và xem trang con có hiển thị không.',
+  'Mở /admin/settings sau khi tải lại trang.',
+  'Bấm nút quay lại và kiểm tra lịch sử trình duyệt.',
+  'Kiểm tra link đang chọn khi đổi trang.'
 ];
 
 export default function AdminSettings() {
@@ -15,8 +14,8 @@ export default function AdminSettings() {
     <div className="admin-page">
       <div className="admin-page-header">
         <div>
-          <p className="eyebrow">Programmatic Navigation</p>
-          <h1>System Settings</h1>
+          <p className="eyebrow">Cài đặt</p>
+          <h1>Thiết lập hệ thống</h1>
         </div>
 
         <span className="pill">/admin/settings</span>
@@ -24,24 +23,23 @@ export default function AdminSettings() {
 
       <div className="settings-grid">
         <article className="settings-card">
-          <h3>Route Protection</h3>
+          <h3>Bảo vệ trang</h3>
           <p>
-            Example concept of route guards and protected routes
-            in React Router applications.
+            Ví dụ ý tưởng cho trang cần đăng nhập.
           </p>
         </article>
 
         <article className="settings-card">
-          <h3>History Replace</h3>
+          <h3>Thay thế lịch sử</h3>
           <p>
-            Demonstration of replace navigation and history stack control.
+            Dùng khi không muốn quay lại bước trước.
           </p>
         </article>
 
         <article className="settings-card">
-          <h3>Responsive Layout</h3>
+          <h3>Bố cục linh hoạt</h3>
           <p>
-            Responsive nested layout supporting desktop and mobile screens.
+            Hiển thị ổn trên màn hình lớn và nhỏ.
           </p>
         </article>
       </div>

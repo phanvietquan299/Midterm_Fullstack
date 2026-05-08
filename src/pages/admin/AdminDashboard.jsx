@@ -2,19 +2,16 @@ import { useNavigate } from 'react-router-dom';
 
 const cards = [
   {
-    title: 'Route Management',
-    description:
-      'Manage nested routes and layout rendering with React Router.'
+    title: 'Trang con',
+    description: 'Khu quản trị hiển thị bằng layout và trang lồng nhau.'
   },
   {
-    title: 'Browser History',
-    description:
-      'Demonstrate navigate(), back navigation and replace history.'
+    title: 'Lịch sử trình duyệt',
+    description: 'Có nút quay lại và điều hướng sang trang khác.'
   },
   {
-    title: 'Query String',
-    description:
-      'Persist filtering and sorting state inside the URL.'
+    title: 'Trạng thái trên URL',
+    description: 'Bộ lọc vẫn giữ được khi nằm trong địa chỉ trang.'
   }
 ];
 
@@ -27,27 +24,26 @@ export default function AdminDashboard() {
         <div>
           <p className="eyebrow">Admin Dashboard</p>
 
-          <h1>Nested Routing Workspace</h1>
+          <h1>Khu quản trị</h1>
 
           <p>
-            This section demonstrates nested routes using Outlet and
-            programmatic navigation using useNavigate().
+            Đây là phần điều hướng sang các trang con trong khu quản trị.
           </p>
         </div>
 
         <div className="admin-hero-actions">
           <button
             className="button button-primary"
-            onClick={() => navigate('/admin/users')}
+            onClick={() => navigate('/admin/products')}
           >
-            Open Users
+            Sang sản phẩm
           </button>
 
           <button
             className="button button-secondary"
-            onClick={() => navigate('/admin/settings')}
+            onClick={() => navigate(-1)}
           >
-            Open Settings
+            Quay lại
           </button>
         </div>
       </section>

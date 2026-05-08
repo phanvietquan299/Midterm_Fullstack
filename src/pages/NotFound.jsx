@@ -6,11 +6,10 @@ export default function NotFound() {
       <div className="notfound-card">
         <span className="notfound-code">404</span>
 
-        <h1>Page Not Found</h1>
+        <h1>Không tìm thấy trang</h1>
 
         <p>
-          The page you are looking for does not exist or has been moved
-          to another route.
+          Đường dẫn này chưa được thiết lập trong ứng dụng.
         </p>
 
         <div className="notfound-actions">

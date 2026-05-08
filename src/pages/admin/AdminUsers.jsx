@@ -9,7 +9,7 @@ const users = [
   },
   {
     name: 'Michael Lee',
-    role: 'Frontend Developer'
+    role: 'Designer'
   }
 ];
 
@@ -21,8 +21,8 @@ export default function AdminUsers() {
     <div className="admin-page">
       <div className="admin-page-header">
         <div>
-          <p className="eyebrow">Nested Route</p>
-          <h1>Users Management</h1>
+          <p className="eyebrow">Người dùng</p>
+          <h1>Danh sách người dùng</h1>
         </div>
 
         <span className="pill">/admin/users</span>

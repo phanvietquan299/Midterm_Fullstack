@@ -43,20 +43,23 @@ export default function ProductDetail() {
       <div className="content-stack">
         <div className="section-header">
           <div>
+            <p className="eyebrow">Chi tiết</p>
             <h2>{product.name}</h2>
           </div>
           <span className="pill">/products/{id}</span>
         </div>
 
-        <p className="lead">Category: {product.category}</p>
+        <p className="lead">
+          Danh mục: {product.category}. Trang này lấy mã từ URL và giữ lại bộ lọc hiện tại.
+        </p>
         <p>{product.summary}</p>
 
         {queryEntries.length > 0 ? (
           <div className="query-state">
             <div className="section-header">
               <div>
-                <p className="eyebrow">Query string state</p>
-                <h3>URL keeps filter and sort</h3>
+                <p className="eyebrow">Bộ lọc</p>
+                <h3>Giữ trạng thái trên URL</h3>
               </div>
             </div>
 
@@ -72,10 +75,10 @@ export default function ProductDetail() {
 
         <div className="detail-actions">
           <button className="button button-primary" onClick={() => navigate(-1)}>
-            Back with history
+            Quay lại
           </button>
           <Link className="button button-secondary" to={backToList}>
-            Back to filtered list
+            Về danh sách
           </Link>
         </div>
       </div>

@@ -3,8 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const adminLinks = [
   { to: '/', label: 'Home' },
   { to: '/admin', label: 'Dashboard', end: true },
-  { to: '/admin/users', label: 'Users' },
-  { to: '/admin/settings', label: 'Settings' },
+  { to: '/admin/products', label: 'Products' },
 ];
 
 export default function AdminLayout() {
@@ -12,13 +11,14 @@ export default function AdminLayout() {
     <div className="admin-layout">
       <aside className="admin-sidebar">
         <div>
-          <p className="eyebrow">Nested Routes</p>
-          <h1>Admin Area</h1>
-          <p className="muted">This section is reserved for Outlet-based pages.</p>
+          <p className="eyebrow">Quản trị</p>
+          <h1>Khu quản trị</h1>
+          <p className="muted">
+            Có trang con và thanh điều hướng riêng.
+          </p>
         </div>
 
         <nav className="admin-nav">
-
           {adminLinks.map((link) => (
             <NavLink
               key={link.to}

@@ -31,9 +31,7 @@ function sortProducts(list, sortKey) {
   }
 
   if (sortKey === 'name_asc') {
-    return sorted.sort((left, right) =>
-      left.name.localeCompare(right.name)
-    );
+    return sorted.sort((left, right) => left.name.localeCompare(right.name));
   }
 
   return sorted;
@@ -68,58 +66,73 @@ export default function Products() {
 
   return (
     <section className="content-stack">
-        <div className="section-header">
-          <div>
-            <h2>Products</h2>
-          </div>
+      <div className="section-header section-header-stack">
+        <div>
+          <h2>Products</h2>
+          <p className="lead">
+            Chọn bộ lọc bên dưới, rồi mở sản phẩm để xem trạng thái trên URL.
+          </p>
         </div>
 
-        <div className="toolbar">
-          <label className="field">
-            <span>Category</span>
-            <select
-              value={category}
-              onChange={(event) => updateSearchParams('category', event.target.value)}
-            >
-              {categoryOptions.map((option) => (
-                <option key={option} value={option}>
-                  {formatOptionLabel(option)}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="field">
-            <span>Sort</span>
-            <select
-              value={sort}
-              onChange={(event) => updateSearchParams('sort', event.target.value)}
-            >
-              {sortOptions.map((option) => (
-                <option key={option} value={option}>
-                  {formatOptionLabel(option)}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <Link className="button button-secondary" to="/products">
-            Reset filters
-          </Link>
+        <div className="section-notes">
+          <span className="pill">Loại: {category}</span>
+          <span className="pill">Sắp xếp: {sort}</span>
         </div>
+      </div>
 
-        {filteredProducts.length > 0 ? (
-          <div className="product-grid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} queryString={searchQuery} />
+      <div className="toolbar">
+        <label className="field">
+          <span>Loại</span>
+          <select
+            value={category}
+            onChange={(event) => updateSearchParams('category', event.target.value)}
+          >
+            {categoryOptions.map((option) => (
+              <option key={option} value={option}>
+                {formatOptionLabel(option)}
+              </option>
             ))}
-          </div>
-        ) : (
-          <EmptyState
-            title="No products found"
-            description="Adjust category or sorting filters to display matching products."
-          />
-        )}
+          </select>
+        </label>
+
+        <label className="field">
+          <span>Sắp xếp</span>
+          <select
+            value={sort}
+            onChange={(event) => updateSearchParams('sort', event.target.value)}
+          >
+            {sortOptions.map((option) => (
+              <option key={option} value={option}>
+                {formatOptionLabel(option)}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <Link className="button button-secondary" to="/products">
+          Reset filters
+        </Link>
+      </div>
+
+      {searchQuery ? (
+        <div className="query-summary">
+          <span className="pill">Trạng thái URL</span>
+          <p>{searchQuery}</p>
+        </div>
+      ) : null}
+
+      {filteredProducts.length > 0 ? (
+        <div className="product-grid">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} queryString={searchQuery} />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          title="No products found"
+          description="Adjust category or sorting filters to display matching products."
+        />
+      )}
     </section>
   );
 }

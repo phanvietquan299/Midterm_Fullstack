@@ -2,24 +2,24 @@ import { Link } from 'react-router-dom';
 
 const features = [
   {
-    title: 'SPA Routing',
+    title: 'Chuyển trang',
     description:
-      'Navigate between pages without full page refresh using BrowserRouter and Routes.'
+      'Đi giữa các trang mà không tải lại toàn bộ ứng dụng.'
   },
   {
-    title: 'Dynamic Params',
+    title: 'Trang chi tiết',
     description:
-      'Access route parameters like /products/:id using useParams().'
+      'Mở trang chi tiết theo mã sản phẩm ở URL.'
   },
   {
-    title: 'Query String State',
+    title: 'Bộ lọc trên URL',
     description:
-      'Persist filtering and sorting state directly inside the URL.'
+      'Lọc và sắp xếp vẫn giữ nguyên sau khi tải lại trang.'
   },
   {
-    title: 'Nested Routes',
+    title: 'Khu vực admin',
     description:
-      'Use Outlet and layout routing for scalable application structure.'
+      'Phần quản trị dùng layout riêng và trang con.'
   }
 ];
 
@@ -27,22 +27,40 @@ const routeCards = [
   {
     route: '/',
     title: 'Home Route',
-    desc: 'Landing page with navigation overview.'
+    desc: 'Trang chính và menu điều hướng.'
   },
   {
     route: '/products',
     title: 'Products Route',
-    desc: 'Filtering, sorting and query string demo.'
+    desc: 'Danh sách sản phẩm, lọc và sắp xếp.'
   },
   {
     route: '/products/:id',
     title: 'Dynamic Detail Route',
-    desc: 'Product detail using route params.'
+    desc: 'Trang chi tiết theo mã sản phẩm.'
   },
   {
     route: '/admin',
     title: 'Admin Dashboard',
-    desc: 'Nested routing with Outlet rendering.'
+    desc: 'Khu quản trị có trang con.'
+  },
+  {
+    route: '/admin/products',
+    title: 'Admin Products',
+    desc: 'Trang sản phẩm trong khu quản trị.'
+  }
+];
+
+const userFlows = [
+  {
+    title: 'Flow 1: Danh sách → chi tiết',
+    description:
+      'Vào danh sách, bấm một sản phẩm, rồi mở trang chi tiết theo mã trên URL.'
+  },
+  {
+    title: 'Flow 2: Lọc và tải lại',
+    description:
+      'Chọn bộ lọc, sắp xếp, rồi tải lại trang mà trạng thái vẫn còn.'
   }
 ];
 
@@ -71,23 +89,15 @@ export default function Home() {
       <section className="hero-section">
         <div className="hero-left">
 
-          <h1>
-            Professional React Router Navigation Experience.
-          </h1>
-
-          <p className="hero-description">
-            This project demonstrates SPA routing, dynamic route parameters,
-            query string management, nested routes, and browser history handling
-            inside a modern React application.
-          </p>
+          <h1>Mini App</h1>
 
           <div className="hero-actions">
             <Link className="button button-primary" to="/products">
-              Explore Products
+              Xem sản phẩm
             </Link>
 
             <Link className="button button-secondary" to="/admin">
-              Open Dashboard
+              Mở quản trị
             </Link>
           </div>
 
@@ -114,7 +124,7 @@ export default function Home() {
                 <div className="sidebar-item active">Home</div>
                 <div className="sidebar-item">Products</div>
                 <div className="sidebar-item">Admin</div>
-                <div className="sidebar-item">Settings</div>
+                <div className="sidebar-item">Product Detail</div>
               </div>
 
               <div className="preview-content">
@@ -135,13 +145,12 @@ export default function Home() {
       <section className="features-section">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Core Technologies</p>
-            <h2>Routing Features</h2>
+            <p className="eyebrow">Tính năng chính</p>
+            <h2>Điểm nổi bật</h2>
           </div>
 
           <p>
-            The application demonstrates multiple React Router concepts
-            inside one complete navigation system.
+            Các màn hình bên dưới cho thấy những kiểu điều hướng chính của ứng dụng.
           </p>
         </div>
 
@@ -158,15 +167,37 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="routes-section">
+      <section className="flows-section">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">Application Architecture</p>
-            <h2>Route Overview</h2>
+            <p className="eyebrow">Hai luồng mẫu</p>
+            <h2>Kịch bản cần chụp</h2>
           </div>
 
           <p>
-            Main routing paths configured inside the React Router application.
+            Hai luồng này đúng với yêu cầu của đề.
+          </p>
+        </div>
+
+        <div className="flow-grid">
+          {userFlows.map((flow) => (
+            <article key={flow.title} className="flow-card">
+              <h3>{flow.title}</h3>
+              <p>{flow.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="routes-section">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Sơ đồ đường dẫn</p>
+            <h2>Các route chính</h2>
+          </div>
+
+          <p>
+            Các đường dẫn đang dùng trong app.
           </p>
         </div>
 

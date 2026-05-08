@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div>
-        <h1>Routing Studio</h1>
+        <h1>Mini app</h1>
       </div>
 
       <nav className="nav-links" aria-label="Primary navigation">
