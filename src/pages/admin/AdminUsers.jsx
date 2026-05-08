@@ -14,6 +14,9 @@ const users = [
 ];
 
 export default function AdminUsers() {
+  const activeUsers = users.filter((user) => user.status === 'active').length;
+  const inactiveUsers = users.length - activeUsers;
+
   return (
     <div className="admin-page">
       <div className="admin-page-header">

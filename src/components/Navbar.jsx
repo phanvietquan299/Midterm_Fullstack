@@ -9,6 +9,10 @@ const links = [
 export default function Navbar() {
   return (
     <header className="navbar">
+      <div>
+        <p className="eyebrow">React Router Midterm</p>
+        <h1>Routing Studio</h1>
+      </div>
 
       <nav className="nav-links" aria-label="Primary navigation">
         {links.map((link) => (
