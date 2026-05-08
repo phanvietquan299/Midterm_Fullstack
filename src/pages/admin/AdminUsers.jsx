@@ -1,11 +1,44 @@
+const users = [
+  {
+    name: 'Alex Johnson',
+    role: 'Administrator'
+  },
+  {
+    name: 'Sarah Parker',
+    role: 'Product Manager'
+  },
+  {
+    name: 'Michael Lee',
+    role: 'Frontend Developer'
+  }
+];
+
 export default function AdminUsers() {
   return (
-    <div className="content-stack">
-      <p className="eyebrow">Nested routes</p>
-      <h2>Admin Users</h2>
-      <p>
-        Use this page to demonstrate nested admin navigation and route switching.
-      </p>
+    <div className="admin-page">
+      <div className="admin-page-header">
+        <div>
+          <p className="eyebrow">Nested Route</p>
+          <h1>Users Management</h1>
+        </div>
+
+        <span className="pill">/admin/users</span>
+      </div>
+
+      <div className="users-grid">
+        {users.map((user) => (
+          <article key={user.name} className="user-card">
+            <div className="user-avatar">
+              {user.name.charAt(0)}
+            </div>
+
+            <div>
+              <h3>{user.name}</h3>
+              <p>{user.role}</p>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }

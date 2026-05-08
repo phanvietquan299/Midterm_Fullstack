@@ -16,7 +16,9 @@ function sortProducts(list, sortKey) {
   }
 
   if (sortKey === 'name_asc') {
-    return sorted.sort((left, right) => left.name.localeCompare(right.name));
+    return sorted.sort((left, right) =>
+      left.name.localeCompare(right.name)
+    );
   }
 
   return sorted;
@@ -24,6 +26,7 @@ function sortProducts(list, sortKey) {
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
+
   const category = searchParams.get('category') || 'all';
   const sort = searchParams.get('sort') || 'featured';
 
@@ -49,55 +52,95 @@ export default function Products() {
   };
 
   return (
-    <section className="content-stack">
-      <div className="section-header">
-        <div>
-          <p className="eyebrow">Member 2 starter</p>
-          <h2>Products</h2>
+    <div className="products-layout">
+      <section className="products-hero">
+        <div className="products-hero-content">
+          <div>
+            <p className="eyebrow">React Router Query String</p>
+
+            <h1>Products Navigation Demo</h1>
+
+            <p className="products-description">
+              Demonstration of filtering, sorting, query strings,
+              dynamic route params, and SPA navigation.
+            </p>
+          </div>
+
+          <div className="products-summary">
+            <div className="summary-box">
+              <h3>{filteredProducts.length}</h3>
+              <p>Products Found</p>
+            </div>
+
+            <div className="summary-box">
+              <h3>{category}</h3>
+              <p>Category</p>
+            </div>
+
+            <div className="summary-box">
+              <h3>{sort}</h3>
+              <p>Sort Method</p>
+            </div>
+          </div>
         </div>
-        <p className="muted">Use the filters to demonstrate query-string state.</p>
-      </div>
+      </section>
 
-      <div className="toolbar">
-        <label className="field">
-          <span>Category</span>
-          <select value={category} onChange={(event) => updateSearchParams('category', event.target.value)}>
-            {categoryOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
+      <section className="content-stack">
+        <div className="toolbar modern-toolbar">
+          <div className="toolbar-group">
+            <label className="field">
+              <span>Category</span>
 
-        <label className="field">
-          <span>Sort</span>
-          <select value={sort} onChange={(event) => updateSearchParams('sort', event.target.value)}>
-            {sortOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
+              <select
+                value={category}
+                onChange={(event) =>
+                  updateSearchParams('category', event.target.value)
+                }
+              >
+                {categoryOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
 
-        <Link className="button button-secondary" to="/products">
-          Reset filters
-        </Link>
-      </div>
+            <label className="field">
+              <span>Sort</span>
 
-      {filteredProducts.length > 0 ? (
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+              <select
+                value={sort}
+                onChange={(event) =>
+                  updateSearchParams('sort', event.target.value)
+                }
+              >
+                {sortOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <Link className="button button-secondary" to="/products">
+            Reset Filters
+          </Link>
         </div>
-      ) : (
-        <EmptyState
-          title="No products found"
-          description="Adjust category or sort options to show product results."
-        />
-      )}
-    </section>
+
+        {filteredProducts.length > 0 ? (
+          <div className="product-grid modern-product-grid">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            title="No products found"
+            description="Adjust category or sorting filters to display matching products."
+          />
+        )}
+      </section>
+    </div>
   );
 }

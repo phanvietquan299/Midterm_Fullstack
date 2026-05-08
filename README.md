@@ -19,13 +19,48 @@ npm run dev
 ## Project Structure
 
 ```text
-src/
-├── components/
-├── layouts/
-├── pages/
-├── routes/
-├── data/
-└── App.jsx
+MIDTERM_FULLSTACK/
+│
+├── node_modules/
+│
+├── src/
+│   │
+│   ├── components/
+│   │   ├── EmptyState.jsx
+│   │   ├── Navbar.jsx
+│   │   └── ProductCard.jsx
+│   │
+│   ├── data/
+│   │   └── products.js
+│   │
+│   ├── layouts/
+│   │   ├── AdminLayout.jsx
+│   │   └── MainLayout.jsx
+│   │
+│   ├── pages/
+│   │   │
+│   │   ├── admin/
+│   │   │
+│   │   ├── Home.jsx
+│   │   ├── NotFound.jsx
+│   │   ├── ProductDetail.jsx
+│   │   └── Products.jsx
+│   │
+│   ├── routes/
+│   │   └── AppRoutes.jsx
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 ```
 
 ## Feature Split
