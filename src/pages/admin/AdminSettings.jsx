@@ -1,10 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 
-const qaChecks = [
-  'Mở /admin và xem trang con có hiển thị không.',
-  'Mở /admin/settings sau khi tải lại trang.',
-  'Bấm nút quay lại và kiểm tra lịch sử trình duyệt.',
-  'Kiểm tra link đang chọn khi đổi trang.'
+const settingsCards = [
+  {
+    title: 'Bảo mật',
+    description: 'Mô phỏng quyền truy cập và các hành vi điều hướng an toàn hơn.'
+  },
+  {
+    title: 'Trải nghiệm',
+    description: 'Nhóm giao diện này tập trung vào độ thoáng, tương phản và thứ bậc thông tin.'
+  },
+  {
+    title: 'Responsive',
+    description: 'Các khối nội dung chuyển sang layout một cột trên thiết bị nhỏ.'
+  }
 ];
 
 export default function AdminSettings() {
@@ -16,32 +24,28 @@ export default function AdminSettings() {
         <div>
           <p className="eyebrow">Cài đặt</p>
           <h1>Thiết lập hệ thống</h1>
+          <p className="lead">Trang này thể hiện một layout cài đặt nhẹ, sạch và có cảm giác sản phẩm thật.</p>
         </div>
 
         <span className="pill">/admin/settings</span>
       </div>
 
       <div className="settings-grid">
-        <article className="settings-card">
-          <h3>Bảo vệ trang</h3>
-          <p>
-            Ví dụ ý tưởng cho trang cần đăng nhập.
-          </p>
-        </article>
+        {settingsCards.map((card) => (
+          <article key={card.title} className="settings-card">
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </article>
+        ))}
+      </div>
 
-        <article className="settings-card">
-          <h3>Thay thế lịch sử</h3>
-          <p>
-            Dùng khi không muốn quay lại bước trước.
-          </p>
-        </article>
-
-        <article className="settings-card">
-          <h3>Bố cục linh hoạt</h3>
-          <p>
-            Hiển thị ổn trên màn hình lớn và nhỏ.
-          </p>
-        </article>
+      <div className="settings-footer">
+        <button className="button button-primary" onClick={() => navigate('/admin/products')}>
+          Xem sản phẩm
+        </button>
+        <button className="button button-secondary" onClick={() => navigate(-1)}>
+          Quay lại
+        </button>
       </div>
     </div>
   );

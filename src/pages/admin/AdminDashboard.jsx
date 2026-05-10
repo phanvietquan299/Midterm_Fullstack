@@ -27,7 +27,7 @@ export default function AdminDashboard() {
           <h1>Khu quản trị</h1>
 
           <p>
-            Đây là phần điều hướng sang các trang con trong khu quản trị.
+            Đây là phần điều hướng sang các trang con trong khu quản trị, được trình bày như một dashboard thật.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function AdminDashboard() {
       <section className="admin-card-grid">
         {cards.map((card) => (
           <article key={card.title} className="admin-info-card">
-            <div className="admin-card-icon"></div>
+            <div className="admin-card-icon" />
 
             <h3>{card.title}</h3>
 

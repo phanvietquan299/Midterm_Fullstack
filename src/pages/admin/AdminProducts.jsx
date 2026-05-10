@@ -11,7 +11,7 @@ export default function AdminProducts() {
           <p className="eyebrow">Trang con</p>
           <h1>Sản phẩm quản trị</h1>
           <p className="lead">
-            Danh sách sản phẩm trong khu quản trị.
+            Danh sách sản phẩm trong khu quản trị với bố cục thẻ rõ ràng, dễ quét.
           </p>
         </div>
 

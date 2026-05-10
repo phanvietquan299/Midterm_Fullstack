@@ -7,6 +7,8 @@ import ProductDetail from '../pages/ProductDetail';
 import Products from '../pages/Products';
 import AdminDashboard from '../pages/admin/AdminDashboard';
 import AdminProducts from '../pages/admin/AdminProducts';
+import AdminUsers from '../pages/admin/AdminUsers';
+import AdminSettings from '../pages/admin/AdminSettings';
 
 export default function AppRoutes() {
   return (
@@ -20,8 +22,8 @@ export default function AppRoutes() {
       <Route path="admin" element={<AdminLayout />}>
         <Route index element={<AdminDashboard />} />
         <Route path="products" element={<AdminProducts />} />
-        <Route path="users" element={<Navigate to="/admin/products" replace />} />
-        <Route path="settings" element={<Navigate to="/admin/products" replace />} />
+        <Route path="users" element={<AdminUsers />} />
+        <Route path="settings" element={<AdminSettings />} />
       </Route>
 
       <Route path="/home" element={<Navigate to="/" replace />} />

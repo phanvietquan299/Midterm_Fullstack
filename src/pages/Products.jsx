@@ -70,7 +70,7 @@ export default function Products() {
         <div>
           <h2>Products</h2>
           <p className="lead">
-            Chọn bộ lọc bên dưới, rồi mở sản phẩm để xem trạng thái trên URL.
+            Chọn bộ lọc bên dưới, rồi mở sản phẩm để xem trạng thái được giữ lại trên URL.
           </p>
         </div>
 
@@ -78,6 +78,13 @@ export default function Products() {
           <span className="pill">Loại: {category}</span>
           <span className="pill">Sắp xếp: {sort}</span>
         </div>
+      </div>
+
+      <div className="result-strip">
+        <span className="pill">{filteredProducts.length} items</span>
+        <p className="muted">
+          Sắp xếp và lọc đang đồng bộ với query string để có thể reload hoặc chia sẻ link.
+        </p>
       </div>
 
       <div className="toolbar">

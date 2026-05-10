@@ -38,6 +38,10 @@ export default function ProductDetail() {
     <section className="detail-card">
       <div className={`detail-visual tone-${product.tone}`}>
         <span>{product.icon}</span>
+        <div className="detail-visual-card">
+          <span className="pill">{product.category}</span>
+          <strong>${product.price.toLocaleString()}</strong>
+        </div>
       </div>
 
       <div className="content-stack">
@@ -53,6 +57,21 @@ export default function ProductDetail() {
           Danh mục: {product.category}. Trang này lấy mã từ URL và giữ lại bộ lọc hiện tại.
         </p>
         <p>{product.summary}</p>
+
+        <div className="detail-specs">
+          <div className="spec-card">
+            <span className="muted">Product ID</span>
+            <strong>{product.id}</strong>
+          </div>
+          <div className="spec-card">
+            <span className="muted">Category</span>
+            <strong>{product.category}</strong>
+          </div>
+          <div className="spec-card">
+            <span className="muted">Price</span>
+            <strong>${product.price.toLocaleString()}</strong>
+          </div>
+        </div>
 
         {queryEntries.length > 0 ? (
           <div className="query-state">

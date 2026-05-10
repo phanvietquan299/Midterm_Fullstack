@@ -67,29 +67,42 @@ const userFlows = [
 const stats = [
   {
     value: '8+',
-    label: 'Routes Configured'
+    label: 'Routes'
   },
   {
     value: 'SPA',
-    label: 'Navigation System'
+    label: 'Navigation'
   },
   {
     value: '100%',
-    label: 'Responsive Design'
+    label: 'Responsive'
   },
   {
     value: 'React',
-    label: 'Modern Frontend'
+    label: 'Frontend'
   }
 ];
+
+const highlights = ['Router demo', 'Filter state in URL', 'Admin layout', 'Responsive cards'];
 
 export default function Home() {
   return (
     <div className="home-layout">
       <section className="hero-section">
         <div className="hero-left">
+          <h1>Giao diện sáng, gọn và có chiều sâu hơn cho toàn bộ app.</h1>
+          <p className="hero-description">
+            Trang chủ đóng vai trò như một landing page giới thiệu các route, các luồng điều hướng,
+            và cách trạng thái được giữ lại khi thao tác qua URL.
+          </p>
 
-          <h1>Mini App</h1>
+          <div className="highlight-row">
+            {highlights.map((item) => (
+              <span key={item} className="pill pill-soft">
+                {item}
+              </span>
+            ))}
+          </div>
 
           <div className="hero-actions">
             <Link className="button button-primary" to="/products">
@@ -128,7 +141,10 @@ export default function Home() {
               </div>
 
               <div className="preview-content">
-                <div className="preview-card large"></div>
+                <div className="preview-card large">
+                  <span className="preview-title">Route map</span>
+                  <span className="preview-chip">React Router</span>
+                </div>
 
                 <div className="preview-grid">
                   <div className="preview-card"></div>

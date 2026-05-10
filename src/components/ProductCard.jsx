@@ -9,6 +9,7 @@ export default function ProductCard({ product, queryString }) {
     <article className="product-card">
       <div className={`product-visual tone-${product.tone}`}>
         <span>{product.icon}</span>
+        <span className="product-sheen" />
       </div>
 
       <div className="product-body">

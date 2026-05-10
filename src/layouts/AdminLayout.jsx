@@ -1,9 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
 const adminLinks = [
-  { to: '/', label: 'Home' },
   { to: '/admin', label: 'Dashboard', end: true },
   { to: '/admin/products', label: 'Products' },
+  { to: '/admin/users', label: 'Users' },
+  { to: '/admin/settings', label: 'Settings' },
+  { to: '/', label: 'Back to site' }
 ];
 
 export default function AdminLayout() {
@@ -13,9 +15,7 @@ export default function AdminLayout() {
         <div>
           <p className="eyebrow">Quản trị</p>
           <h1>Khu quản trị</h1>
-          <p className="muted">
-            Có trang con và thanh điều hướng riêng.
-          </p>
+          <p className="muted">Thanh điều hướng riêng với các trang con và trạng thái rõ ràng.</p>
         </div>
 
         <nav className="admin-nav">

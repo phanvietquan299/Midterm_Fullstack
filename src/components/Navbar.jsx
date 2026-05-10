@@ -9,8 +9,11 @@ const links = [
 export default function Navbar() {
   return (
     <header className="navbar">
-      <div>
-        <h1>Mini app</h1>
+      <div className="navbar-brand">
+        <span className="brand-mark">N</span>
+        <div>
+          <h1>Northstar Commerce</h1>
+        </div>
       </div>
 
       <nav className="nav-links" aria-label="Primary navigation">
